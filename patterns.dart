@@ -6,5 +6,9 @@ Map<String, int> hist = {
 final record = (a: 1, b: 2, c: 3);
 
 void main() {
-  var (:a, :b, :c) = record;
+  String color = "red";
+   var isPrimary = switch(color) {
+   "red" || "blue" || "yellow" => true,
+   _ => false,
+   }
 }
