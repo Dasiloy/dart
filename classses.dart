@@ -90,24 +90,59 @@
 //   }
 // }
 
-abstract interface class Food {
-  void cook();
+// abstract interface class Food {
+//   void cook();
+// }
+
+// mixin Kitchen implements Food {}
+
+// class BakedFood with Kitchen {
+//   @override
+//   void cook() {
+//     // TODO: implement cook
+//   }
+
+//   int call(int start) {
+//     return start;
+//   }
+// }
+
+abstract class Entity {
+  final String id;
+
+  const Entity(this.id);
+
+  Entity getDocument();
+
+  printBluePrint() {
+    print(this);
+  }
 }
 
-mixin Kitchen implements Food {}
+class User implements Entity {
+  final String id;
+  final String firstName;
+  final String lastName;
+  final String? email;
 
-class BakedFood with Kitchen {
+  const User({
+    required this.id,
+    required this.firstName,
+    required this.lastName,
+    this.email,
+  });
+
   @override
-  void cook() {
-    // TODO: implement cook
+  User getDocument() {
+    return this;
   }
 
-  int call(int start) {
-    return start;
-  }
+  @override
+  printBluePrint() {}
 }
 
 void main() {
-  var baked = BakedFood();
-  print(baked(456));
+  const user = User(id: "1", firstName: "John", lastName: "Doe");
+  user.getDocument();
+  user.printBluePrint();
 }
