@@ -1,0 +1,5 @@
+name: first_dart_app
+environment: 
+  sdk: '^3.6.0'
+dependencies:
+  vector_math: ^2.1.5
